@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    color: white;
+    color: #c0b4b4;
     background-color: #121212;
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .input::placeholder {
-    color: #ccc;
+    color: #c0b4b4;
 }
 
 .registration {
@@ -52,7 +52,7 @@ body {
 .section .page h1,
 .section .page .input,
 .section .page .button {
-    color: white;
+    color: #867f7f;
 }
 
 .button {
@@ -78,6 +78,18 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #c0b4b4;
     margin-left: 10px;
+}
+
+.footer-text {
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
+.guide {
+    font-size: 12px;
+    text-align: start;
+    color: #c0b4b4;
+    margin-bottom: 10px;
 }
