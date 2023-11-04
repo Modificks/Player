@@ -20,7 +20,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
+    margin-top: 124px;
 }
 
 .input {
@@ -67,6 +68,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-weight: 200;
 }
 
 .button:hover {
