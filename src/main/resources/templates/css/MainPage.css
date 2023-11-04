@@ -21,7 +21,19 @@ body {
 
 .registration-link {
     display: block;
-    margin-left: -26%;
+    margin-left: -20%;
+    margin-top: 2%;
+    color: #c0b4b4;
+    font-size: 18px;
+    font-weight: 1000;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.log-in-link {
+    display: block;
+    margin-left: -110%;
     margin-top: 2%;
     color: #c0b4b4;
     font-size: 18px;
