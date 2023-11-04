@@ -43,6 +43,7 @@ body {
 
 .registration {
     width: 400px;
+    height: 4000px;
     text-align: center;
 }
 
@@ -85,7 +86,6 @@ body {
 
 .footer-text {
     font-weight: 1000;
-    text-decoration: underline;
 }
 
 .guide {
@@ -93,4 +93,8 @@ body {
     text-align: start;
     color: #c0b4b4;
     margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 48px;
 }
