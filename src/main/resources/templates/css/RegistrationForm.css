@@ -35,10 +35,11 @@ body {
 
 .input.error {
     border-color: red;
+    border-width: 4px;
 }
 
 .input::placeholder {
-    color: #c0b4b4;
+    color: #8d8d8d;
 }
 
 .registration {
