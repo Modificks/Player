@@ -43,6 +43,14 @@ body {
     white-space: nowrap;
 }
 
+.registration-link:hover {
+    color: #54cef6;
+}
+
+.log-in-link:hover {
+    color: #54cef6;
+}
+
 .registration-button:hover {
     background-color: #54cef6;
 }
@@ -83,7 +91,7 @@ body {
     background-color: #f3efef;
     color: #383838;
     border: none;
-    padding: 15px 30px;
+    padding: 16px 32px;
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
@@ -134,5 +142,5 @@ h4 {
 }
 
 .advantages {
-    font-size: 28px;
+    font-size: 32px;
 }
