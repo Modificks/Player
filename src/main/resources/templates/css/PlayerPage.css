@@ -67,7 +67,7 @@ p {
     background-color: #e5e5e5;
 }
 
-.search-form__txt {
+.search-form-text {
     border: none;
     width: 200px;
     outline: none;
@@ -77,12 +77,12 @@ p {
     padding-left: 10px;
 }
 
-.search-form__btn {
+.search-form-button {
     border: none;
     background-color: transparent;
 }
 
-.search-form__img {
+.search-form-image {
     display: flex;
     align-items: center;
     justify-content: center;
