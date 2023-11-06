@@ -5,7 +5,7 @@ document.getElementById('searchInput').addEventListener('input', function() {
          table = document.getElementsByClassName('list-of-songs')[0],
          tr = table.getElementsByTagName('tr');
 
-    for (let i = 0; i < tr.length; i++) {
+    for (let i = 1; i < tr.length; i++) {
          let td = tr[i].getElementsByTagName('th');
 
         for (let j = 0; j < td.length; j++) {
