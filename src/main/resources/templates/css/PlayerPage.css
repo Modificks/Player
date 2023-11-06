@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #c0b4b4;
+    background-color: #000000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.img-container,.list-of-songs {
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-weight: 600;
+}
+
+.navigation-tools-section {
+    background-color: #171717;
+    border-radius: 8px;
+    height: 160px;
+    width: 380px;
+}
+
+.library-section {
+    margin-top: 10px;
+    background-color: #171717;
+    border-radius: 8px;
+    height: 91vh;
+    width: 380px;
+}
+
+.search-section {
+    margin-top: -1046px;
+    margin-left: 390px;
+    border-radius: 8px;
+    background-color: #101010;
+    height: 80px;
+}
+
+.list-of-songs-section {
+    margin-left: 390px;
+    margin-top: 8px;
+    background-color: #171717;
+    border-radius: 8px;
+    height: 100vh;
+}
+
+.search-form {
+    position: absolute;
+    border: 2px solid #54cef6;
+    border-radius: 25px;
+    display: inline-flex;
+    padding-right: 4px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.search-form__txt {
+    border: none;
+    width: 200px;
+    outline: none;
+    font-size: 18px;
+    padding-right: 10px;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.search-form__btn {
+    border: none;
+    background-color: transparent;
+}
+
+.search-form__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search-container {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.list-of-songs th,
+.list-of-songs td {
+    padding: 26px 120px;
+}
