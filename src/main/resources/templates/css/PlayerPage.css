@@ -45,6 +45,7 @@ p {
     border-radius: 8px;
     background-color: #101010;
     height: 80px;
+    width: 310px;
 }
 
 .list-of-songs-section {
@@ -53,6 +54,14 @@ p {
     background-color: #171717;
     border-radius: 8px;
     height: 100vh;
+}
+
+.bar-section {
+    background-color: #101010;
+    border-radius: 8px;
+    height: 80px;
+    margin-top: -80px;
+    margin-left: 710px;
 }
 
 .search-form {
@@ -77,9 +86,10 @@ p {
     padding-left: 10px;
 }
 
-.search-form-button {
+.search-form-button, .bar-button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .search-form-image {
@@ -87,12 +97,18 @@ p {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    cursor: pointer;
 }
 
 .search-container {
     padding-top: 20px;
     padding-left: 20px;
+}
+
+.bar {
+    width: 50%;
+    margin: 0 auto;
+    border-spacing: 20px;
+    padding-top: -12px;
 }
 
 .list-of-songs th,
