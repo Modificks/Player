@@ -6,64 +6,97 @@
     <meta charset="UTF-8">
     <title>SoundBar - Web Player</title>
     <link rel="icon" type="image/x-icon" href="../images/project_logos/icon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/PlayerPage.css">
 
 </head>
 <body>
 
 <main>
 
-    <section>
+    <section class="navigation-tools-section">
 
-        <img class="img-container" src="../images/project_logos/small_logo.png">
-        <h4 class="app-name">SoundBar</h4>
+        <div class="container">
 
-        <a href="#"><img src="../images/other_images/home.png"></a>
-        <p>Home</p>
+            <img class="img-container" src="../images/project_logos/small_logo.png">
 
-        <a href="#"><img src="../images/other_images/search.png"></a>
-        <p>Search</p>
+            <div class="text-container">
+                <h3>SoundBar</h3>
+            </div>
 
+        </div>
+
+        <div class="container">
+
+            <a href="#"><img class="img-container" src="../images/other_images/home.png"></a>
+
+            <div class="text-container">
+                <p>Home</p>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <a href="#"><img class="img-container" src="../images/other_images/search.png"></a>
+
+            <div class="text-container">
+                <p>Search</p>
+            </div>
+
+        </div>
     </section>
 
-    <section>
+    <section class="library-section">
 
-        <a href="#"><img class="img-container" src="../images/other_images/library.png"></a>
-        <p>My library</p>
+        <div class="container">
 
-    </section>
+            <a href="#"><img class="img-container" src="../images/other_images/library.png"></a>
 
-    <section>
+            <div class="text-container">
+                <p>My library</p>
+            </div>
 
-        <table>
-
-            <tr>
-                <td><a href="#"><img src="../images/other_images/player-page_playlist.png"></a></td>
-            </tr>
-
-            <tr>
-                <td><a href="#"><img src="../images/other_images/liked_playlist.png"></a></td>
-            </tr>
-
-            <tr>
-                <td><a href="#"><img src="../images/other_images/deleted_playlist.png"></a></td>
-            </tr>
-
-        </table>
-
-    </section>
-
-    <section>
+        </div>
 
         <section>
 
-            <div class="search-form">
-                <input class="search-form" type="text" placeholder="What do you want to listen?">
-                <button class="search-form-btn"><img class="search-form-img" src="../images/other_images/search.png" alt="image"></button>
-            </div>
+            <table>
 
+                <tr>
+                    <td><a href="#"><img src="../images/other_images/player-page_playlist.png"></a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><img src="../images/other_images/liked_playlist.png"></a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><img src="../images/other_images/deleted_playlist.png"></a></td>
+                </tr>
+
+            </table>
         </section>
+    </section>
 
-        <table>
+    <section class="search-section">
+
+        <div class="search-container">
+
+            <div class="search-form">
+
+                <input class="search-form__txt" type="text" placeholder="Search for music">
+
+                <button class="search-form__btn">
+                    <img class="search-form__img" src="../images/other_images/search.png" alt="image">
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="list-of-songs-section">
+
+        <table class="list-of-songs">
 
             <tr>
                 <th>Song</th>
@@ -71,13 +104,28 @@
                 <th>Continuity</th>
             </tr>
 
-<!--      This is example how the list of song at this page will be viewed   -->
+<!--      This is example how the list of song at this page will be viewed and js search testing  -->
             <tr>
                 <th>Example name</th>
                 <th>Example artist</th>
                 <th>Example continuity</th>
                 <th><button class="button">Example add</button> </th>
             </tr>
+
+            <tr>
+                <th>Example name1</th>
+                <th>Example artist1</th>
+                <th>Example continuity1</th>
+                <th><button class="button">Example add</button> </th>
+            </tr>
+
+            <tr>
+                <th>Example name2</th>
+                <th>Example artist2</th>
+                <th>Example continuity2</th>
+                <th><button class="button">Example add</button> </th>
+            </tr>
+
 <!-- -------------------------------------------------------- -->
         </table>
     </section>
