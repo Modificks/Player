@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <meta charset="UTF-8">
     <title>Register your account</title>
-    <link rel="icon" type="image/x-icon" href="../static/images/project_logos/icon.ico">
-    <link rel="stylesheet" type="text/css" href="../static/css/RegistrationForm.css">
+    <link rel="icon" type="image/x-icon" href="" th:href="@{/images/project_logos/icon.ico}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/RegistrationForm.css}">
 
 </head>
 <body>
 
 <header>
     <section class="header">
-        <img class="img-container" src="../static/images/project_logos/logo.png">
+        <img class="img-container" src="" th:src="@{/images/project_logos/logo.png}" alt="image">
         <h3 class="sound-bar">SoundBar</h3>
     </section>
 </header>
@@ -69,15 +69,35 @@
 
     <center>
 
-        <button class="social-media-button"><a href="https://www.linkedin.com/feed/?trk=onboarding-landing" title="LinkedIn"><img src="../static/images/social_media_logos/linkedin.png" alt="LinkedIn"></a></button>
-        <button class="social-media-button"><a href="https://t.me/Modifiks" title="Telegram"><img src="../static/images/social_media_logos/telegram.png" alt="Telegram"></a></button>
-        <button class="social-media-button"><a href="https://www.instagram.com/_p_ersona_/" title="Instagram"><img src="../static/images/social_media_logos/instagram.png" alt="Instagram"></a></button>
+        <button class="social-media-button">
+
+            <a href="https://www.linkedin.com/feed/?trk=onboarding-landing" title="LinkedIn">
+                <img src="" th:src="@{/images/social_media_logos/linkedin.png}" alt="LinkedIn">
+            </a>
+
+        </button>
+
+        <button class="social-media-button">
+
+            <a href="https://t.me/Modifiks" title="Telegram">
+                <img src="" th:src="@{/images/social_media_logos/telegram.png}" alt="Telegram">
+            </a>
+
+        </button>
+
+        <button class="social-media-button">
+
+            <a href="https://www.instagram.com/_p_ersona_/" title="Instagram">
+                <img src="" th:src="@{/images/social_media_logos/instagram.png}" alt="Instagram">
+            </a>
+
+        </button>
 
     </center>
 
 </footer>
 
-<script src="../static/JS/RegistrationValidation.js"></script>
+<script src="../static/JS/RegistrationValidation.js" th:src="@{/JS/RegistrationValidation.js}"></script>
 
 </body>
 </html>
