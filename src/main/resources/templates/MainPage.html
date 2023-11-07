@@ -26,11 +26,11 @@
                 <tr>
 
                     <th>
-                        <div class="log-in-link" onclick="window.location.href='LogInPage.html'">Log In</div>
+                        <a class="log-in-link" th:href="@{/log-in}">Log In</a>
                     </th>
 
                     <th>
-                        <div class="registration-link" onclick="window.location.href='RegistrationForm.html'">Create an account</div>
+                        <a class="registration-link" th:href="@{/registration}">Create an account</a>
                     </th>
 
                 </tr>
@@ -48,7 +48,7 @@
                 <div class="text-container">
 
                     <h2>Listen a lot of music for free</h2>
-                    <div class="registration-button" onclick="window.location.href='RegistrationForm.html'">Start here</div>
+                    <a class="registration-button" th:href="@{/registration}">Start Here</a>
 
                 </div>
 
@@ -59,11 +59,7 @@
 
     <section class="section-size">
 
-        <center>
-
             <h2 class="advantages">Advantages of SoundBar<br><br></h2>
-
-        </center>
 
         <ul class="list-style">
 
@@ -132,7 +128,7 @@
             <div class="text-container-2">
 
                 <h2>Are you ready? So let`s get started</h2>
-                <div class="registration-button" onclick="window.location.href='RegistrationForm.html'">Start here</div>
+                <a class="registration-button" th:href="@{/registration}">Start Here</a>
 
             </div>
 
