@@ -112,19 +112,10 @@ p {
 }
 
 .list-of-songs th,
-.list-of-songs td,
-.liked-list-of-songs th,
-.liked-list-of-songs td,
-.added-list-of-songs th,
-.added-list-of-songs td,
-.deleted-list-of-songs th,
-.deleted-list-of-songs td {
+.list-of-songs td {
     padding: 26px 120px;
 }
 
-.liked-list-of-songs,
-.added-list-of-songs,
-.deleted-list-of-songs,
 .list-of-songs {
     display: none;
 }
