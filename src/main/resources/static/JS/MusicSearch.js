@@ -1,24 +1,32 @@
 document.getElementById('searchInput').addEventListener('input', function() {
 
-     let input = document.getElementById('searchInput'),
-         filter = input.value.toUpperCase(),
-         table = document.getElementsByClassName('list-of-songs')[0],
-         tr = table.getElementsByTagName('tr');
+    let input = document.getElementById('searchInput'),
+        filter = input.value.toUpperCase(),
+        tables = document.querySelectorAll('.list-of-songs');
 
-    for (let i = 1; i < tr.length; i++) {
-         let td = tr[i].getElementsByTagName('th');
+    tables.forEach(function(table) {
+        let tr = table.getElementsByTagName('tr');
 
-        for (let j = 0; j < td.length; j++) {
-            if (td[j]) {
-                let txtValue = td[j].textContent || td[j].innerText;
+        for (let i = 1; i < tr.length; i++) {
+            let td = tr[i].getElementsByTagName('th');
+            let rowVisible = false;
 
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = '';
-                    break;
-                } else {
-                    tr[i].style.display = 'none';
+            for (let j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    let txtValue = td[j].textContent || td[j].innerText;
+
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        rowVisible = true;
+                        break;
+                    }
                 }
             }
+
+            if (rowVisible) {
+                tr[i].style.display = '';
+            } else {
+                tr[i].style.display = 'none';
+            }
         }
-    }
+    });
 });
