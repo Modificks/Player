@@ -69,6 +69,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: 200;
+    text-decoration: none;
 }
 
 .button:hover {
