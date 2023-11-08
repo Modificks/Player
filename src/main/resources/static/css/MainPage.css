@@ -4,31 +4,24 @@ body {
     background-color: #121212;
 }
 
+h4 {
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
+h3 {
+    float: right;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.app-name {
-    float: right;
-}
-
 .img-container {
     margin-right: 20px;
     filter: brightness(0) invert(1);
-}
-
-.registration-link {
-    display: block;
-    margin-left: -20%;
-    margin-top: 2%;
-    color: #c0b4b4;
-    font-size: 18px;
-    font-weight: 1000;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
 }
 
 .log-in-link {
@@ -43,39 +36,24 @@ body {
     white-space: nowrap;
 }
 
-.registration-link:hover {
-    color: #54cef6;
-}
-
 .log-in-link:hover {
     color: #54cef6;
 }
 
-.registration-button:hover {
-    background-color: #54cef6;
-}
-
-.social-media-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #54cef6;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.registration-link {
+    display: block;
+    margin-left: -20%;
+    margin-top: 2%;
     color: #c0b4b4;
-    margin-left: 10px;
-}
-
-.footer-text {
+    font-size: 18px;
     font-weight: 1000;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.guide {
-    font-size: 12px;
-    text-align: start;
-    color: #c0b4b4;
-    margin-bottom: 10px;
+.registration-link:hover {
+    color: #54cef6;
 }
 
 .text-container {
@@ -103,6 +81,41 @@ body {
     left: -20px;
 }
 
+.registration-button:hover {
+    background-color: #54cef6;
+}
+
+.background-img {
+    width: 100%;
+    height: 350px;
+}
+
+.section-size {
+    width: 100%;
+    height: 500px;
+}
+
+.advantages {
+    font-size: 32px;
+    text-align: center;
+}
+
+.list-style {
+    list-style-type: none;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-bottom: 200px;
+}
+
+.text-container-in-advantages {
+    position: absolute;
+    margin-left: 130px;
+    font-size: 18px;
+}
+
 .text-container-2 {
     position: absolute;
     text-align: center;
@@ -112,38 +125,19 @@ body {
     font-size: 62px;
 }
 
-.background-img {
-    width: 100%;
-    height: 350px;
-}
-
-.list-style {
-    list-style-type: none;
-}
-
-.section-size {
-    width: 100%;
-    height: 500px;
-}
-
-.text-container-in-advantages {
-    position: absolute;
-    margin-left: 130px;
-    font-size: 18px;
-}
-
-.column {
-    float: left;
-    width: 50%;
-    margin-bottom: 200px;
-}
-
-h4 {
-    font-weight: 1000;
-    text-decoration: underline;
-}
-
-.advantages {
-    font-size: 32px;
+.footer-attributes {
     text-align: center;
+    font-weight: 1000;
+}
+
+.social-media-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #54cef6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0b4b4;
+    margin-left: 10px;
 }

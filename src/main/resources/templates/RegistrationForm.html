@@ -13,24 +13,26 @@
 <header>
     <section class="header">
         <img class="img-container" src="" th:src="@{/images/project_logos/logo.png}" alt="image">
-        <h3 class="sound-bar">SoundBar</h3>
+        <h3>SoundBar</h3>
     </section>
 </header>
 
 <main>
     <section class="page">
 
-        <center>
             <h1>Register <br>to explore world <br>of music</h1>
-        </center>
 
         <div class="registration">
-            <form class="registration-form" action="" novalidate method="post">
+            <form action="" novalidate method="post">
 
                 <div class="form-group">
 
                     <p class="guide">Enter your email</p>
-                    <input type="email" class="input js-input js-input-email" name="email" placeholder="Email@domain.com">
+
+                    <label>
+                        <input type="email" class="input js-input js-input-email" name="email" placeholder="Email@domain.com">
+                    </label>
+
                     <div class="error-message" id="emailError"></div>
 
                 </div>
@@ -38,7 +40,11 @@
                 <div class="form-group">
 
                     <p class="guide">Enter your nickname</p>
-                    <input type="text" class="input js-input js-input-nickname" name="nickname" placeholder="N1Ckn0me(up to 15 symbols)">
+
+                    <label>
+                        <input type="text" class="input js-input js-input-nickname" name="nickname" placeholder="N1Ckn0me(up to 15 symbols)">
+                    </label>
+
                     <div class="error-message" id="nicknameError"></div>
 
                 </div>
@@ -46,7 +52,11 @@
                 <div class="form-group">
 
                     <p class="guide">Enter your password</p>
-                    <input type="password" class="input js-input js-input-password" name="password" placeholder="password">
+
+                    <label>
+                        <input type="password" class="input js-input js-input-password" name="password" placeholder="password">
+                    </label>
+
                     <div class="error-message" id="passwordError"></div>
 
                 </div>
@@ -60,14 +70,9 @@
 
 <footer>
 
-    <center class="footer-text">
-
+    <div class="footer-attributes">
         <p>This web-app was created by modificks</p>
         <p>Contact me</p><br>
-
-    </center>
-
-    <center>
 
         <button class="social-media-button">
 
@@ -92,8 +97,7 @@
             </a>
 
         </button>
-
-    </center>
+    </div>
 
 </footer>
 

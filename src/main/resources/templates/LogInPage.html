@@ -15,7 +15,7 @@
 
   <section class="header">
     <img class="img-container" src="" th:src="@{/images/project_logos/logo.png}" alt="image"/>
-    <h3 class="sound-bar">SoundBar</h3>
+    <h3>SoundBar</h3>
   </section>
 
 </header>
@@ -23,17 +23,19 @@
 <main>
   <section class="page">
 
-    <center>
       <h1>Log in to SoundBar</h1>
-    </center>
 
     <div class="registration">
-      <form class="registration-form" action="" novalidate>
+      <form action="" novalidate>
 
         <div class="form-group">
 
           <p class="guide">Enter your email</p>
-          <input type="email" class="input js-input js-input-email" name="email" placeholder="Email@domain.com">
+
+          <label>
+            <input type="email" class="input js-input js-input-email" name="email" placeholder="Email@domain.com">
+          </label>
+
           <div class="error-message" id="emailError"></div>
 
         </div>
@@ -41,7 +43,11 @@
         <div class="form-group">
 
           <p class="guide">Enter your password</p>
-          <input type="password" class="input js-input js-input-password" name="password" placeholder="password">
+
+          <label>
+            <input type="password" class="input js-input js-input-password" name="password" placeholder="password">
+          </label>
+
           <div class="error-message" id="passwordError"></div>
 
         </div>
@@ -57,7 +63,7 @@
 
 <footer>
 
-  <center>
+  <div class="list-container">
     <ul class="list-style">
 
       <li>
@@ -65,11 +71,11 @@
       </li>
 
       <li>
-        <div class="registration-link" onclick="window.location.href='RegistrationForm.html'">Start here</div>
+        <a class="registration-link" th:href="@{/registration}">Start here</a>
       </li>
 
     </ul>
-  </center>
+  </div>
 
 </footer>
 </body>
