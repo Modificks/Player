@@ -25,7 +25,7 @@
         </center>
 
         <div class="registration">
-            <form class="registration-form" action="" novalidate>
+            <form class="registration-form" action="" novalidate method="post">
 
                 <div class="form-group">
 
@@ -51,7 +51,7 @@
 
                 </div>
 
-                <button class="button" type="submit">Create an account</button>
+                <a class="button" type="submit" th:href="@{/player}">Create an account</a>
             </form>
         </div>
     </section>
