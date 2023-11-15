@@ -23,18 +23,17 @@
             <h1>Register <br>to explore world <br>of music</h1>
 
         <div class="registration">
-            <form action="" novalidate method="post">
+            <form th:action="@{/registration}" th:object="${newUser}" method="post">
 
                 <div class="form-group">
 
                     <p class="guide">Enter your email</p>
 
                     <label>
-                        <input type="email" class="input js-input js-input-email" name="email" placeholder="Email@domain.com">
+                        <input type="email" class="input js-input js-input-email" th:field="*{email}" placeholder="Email@domain.com">
+                        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
                     </label>
-
-                    <div class="error-message" id="emailError"></div>
-
+<!--                    <div class="error-message" id="emailError"></div>-->
                 </div>
 
                 <div class="form-group">
@@ -42,11 +41,12 @@
                     <p class="guide">Enter your nickname</p>
 
                     <label>
-                        <input type="text" class="input js-input js-input-nickname" name="nickname" placeholder="N1Ckn0me(up to 15 symbols)">
+                        <input type="text" class="input js-input js-input-nickname" th:field="*{nickname}" placeholder="N1Ckn0me(up to 15 symbols)">
+                        <div style="color: red" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">error</div>
+
                     </label>
 
-                    <div class="error-message" id="nicknameError"></div>
-
+<!--                    <div class="error-message" id="nicknameError"></div>-->
                 </div>
 
                 <div class="form-group">
@@ -54,15 +54,15 @@
                     <p class="guide">Enter your password</p>
 
                     <label>
-                        <input type="password" class="input js-input js-input-password" name="password" placeholder="password">
+                        <input type="password" class="input js-input js-input-password" th:field="*{password}" placeholder="password">
+                        <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
                     </label>
-
-                    <div class="error-message" id="passwordError"></div>
 
                 </div>
 
-                <a class="button" type="submit" th:href="@{/player}">Create an account</a>
+                <button class="button" type="submit">Create an account</button>
             </form>
+
         </div>
     </section>
 
@@ -101,7 +101,7 @@
 
 </footer>
 
-<script src="../static/JS/RegistrationValidation.js" th:src="@{/JS/RegistrationValidation.js}"></script>
+<!--<script src="../static/JS/RegistrationValidation.js" th:src="@{/JS/RegistrationValidation.js}"></script>-->
 
 </body>
 </html>
