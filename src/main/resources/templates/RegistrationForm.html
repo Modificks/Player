@@ -31,9 +31,9 @@
 
                     <label>
                         <input type="email" class="input js-input js-input-email" th:field="*{email}" placeholder="Email@domain.com">
-                        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
+                        <p class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
                     </label>
-<!--                    <div class="error-message" id="emailError"></div>-->
+
                 </div>
 
                 <div class="form-group">
@@ -42,11 +42,9 @@
 
                     <label>
                         <input type="text" class="input js-input js-input-nickname" th:field="*{nickname}" placeholder="N1Ckn0me(up to 15 symbols)">
-                        <div style="color: red" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">error</div>
-
+                        <p class="error-message" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></p>
                     </label>
 
-<!--                    <div class="error-message" id="nicknameError"></div>-->
                 </div>
 
                 <div class="form-group">
@@ -55,7 +53,7 @@
 
                     <label>
                         <input type="password" class="input js-input js-input-password" th:field="*{password}" placeholder="password">
-                        <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
+                        <p class="error-message" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
                     </label>
 
                 </div>

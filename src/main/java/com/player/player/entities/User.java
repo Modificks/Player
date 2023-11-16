@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
@@ -34,16 +35,24 @@ public class User implements Serializable {
     private Long id;
 
     @Column(name = "email")
-    @Email
+    @NotEmpty(message = "This field can not be empty")
+    @Email(message = "Invalid email. " +
+            "For example: dimanakonechnui7@gmail.com")
    // @Domain
     private String email;
 
     @Column(name = "nickname")
-    @Nickname
+    @NotEmpty(message = "This field can not be empty")
+    @Nickname(message = "Invalid nickname." +
+            "It should contains up to 15 symbols")
     private String nickname;
 
     @Column(name = "password")
-    @Password
+    @NotEmpty(message = "This field can not be empty")
+    @Password(message = "Invalid password " +
+            "It should contains at least one small and one big character," +
+            "one digit and special symbol. " +
+            "And contains at least 6 symbols")
     private String password;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)

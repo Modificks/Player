@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 
 @Controller
@@ -27,24 +28,11 @@ public class RegistrationFormController {
     }
 
     @PostMapping("/registration")
-    public String getPlayerPageAfterRegistration(@ModelAttribute("newUser") @Valid User user, BindingResult bindingResult) {
-
-        if (bindingResult.hasFieldErrors("email")) {
-            bindingResult.addError(new FieldError("newUser", "email", "example: dimanakonechnui7@gmail.com"));
-        }
-
-        if (bindingResult.hasFieldErrors("nickname")) {
-            bindingResult.addError(new FieldError("newUser", "nickname", "It should be less then 15 symbols"));
-        }
-
-        if (bindingResult.hasFieldErrors("password")){
-            bindingResult.addError(new FieldError("newUser", "password", "It should contains small letters, big letters, digits and contains at least 6 symbols"));
-        }
+    public String getPlayerPageAfterRegistration(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "RegistrationForm";
         }
-
 
         postRepository.save(user);
 
