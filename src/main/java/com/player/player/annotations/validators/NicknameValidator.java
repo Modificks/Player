@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 
 public class NicknameValidator implements ConstraintValidator<Nickname, String> {
 
-    private static final String REGEXP = "^[a-zA-Z0-9]{1,15}$";
+    private static final String REGEXP = "^[a-zA-Z0-9'.-_₴!@#$%^&*()]{1,15}$";
 
     @Override
     public boolean isValid(String nickname, ConstraintValidatorContext context) {
