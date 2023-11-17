@@ -29,7 +29,7 @@ public class RegistrationFormController {
     }
 
     @PostMapping("/registration")
-    public String getPlayerPageAfterRegistration(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult, Model model) {
+    public String getPlayerPageAfterRegistration(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "RegistrationForm";
