@@ -30,4 +30,8 @@ public class UserServiceImp {
     public User findByNickname(String nickname) {
         return postRepository.findByNickname(nickname);
     }
+
+    public User findByPassword(String password) {
+        return postRepository.findByPassword(password);
+    }
 }
