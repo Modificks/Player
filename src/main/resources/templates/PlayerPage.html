@@ -141,7 +141,6 @@
     </section>
 
     <section class="list-of-songs-section">
-<!-- example of tables -->
         <table class="list-of-songs" id="added-songs">
             <tr>
                 <th>Song</th>
@@ -149,26 +148,13 @@
                 <th>Continuity</th>
             </tr>
 
-            <tr>
-                <th>Example name added</th>
-                <th>Example artist added</th>
-                <th>Example continuity added</th>
+            <tr th:each="song : ${songs}">
+                <th th:text="${song.title}"></th>
+                <th>Example artist</th>
+                <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
 
-            <tr>
-                <th>Example name1 added</th>
-                <th>Example artist1 added</th>
-                <th>Example continuity1 added</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-
-            <tr>
-                <th>Example name2 added</th>
-                <th>Example artist2 added</th>
-                <th>Example continuity2 added</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
         </table>
 
         <table class="list-of-songs" id="liked-songs">
@@ -178,26 +164,13 @@
                 <th>Continuity</th>
             </tr>
 
-            <tr>
-                <th>Example name like</th>
-                <th>Example artist like</th>
-                <th>Example continuity like</th>
+            <tr th:each="song : ${songs}">
+                <th th:text="${song.title}"></th>
+                <th>Example artist</th>
+                <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
 
-            <tr>
-                <th>Example name1 like</th>
-                <th>Example artist1 like</th>
-                <th>Example continuity1 like</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-
-            <tr>
-                <th>Example name2 like</th>
-                <th>Example artist2 like</th>
-                <th>Example continuity2 like</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
         </table>
 
         <table class="list-of-songs" id="deleted-songs">
@@ -208,25 +181,13 @@
             </tr>
 
             <tr>
-                <th>Example name deleted</th>
-                <th>Example artist deleted</th>
-                <th>Example continuity deleted</th>
+            <tr th:each="song : ${songs}">
+                <th th:text="${song.title}"></th>
+                <th>Example artist</th>
+                <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
 
-            <tr>
-                <th>Example name1 deleted</th>
-                <th>Example artist1 deleted</th>
-                <th>Example continuity1 deleted</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-
-            <tr>
-                <th>Example name2 deleted</th>
-                <th>Example artist2 deleted</th>
-                <th>Example continuity2 deleted</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
         </table>
 
         <table class="list-of-songs" id="list-of-songs">
@@ -237,29 +198,13 @@
                 <th>Continuity</th>
             </tr>
 
-<!--      This is example how the list of song at this page will be viewed and js search testing  -->
-            <tr>
-                <th>Example name</th>
+            <tr th:each="song : ${songs}">
+                <th th:text="${song.title}"></th>
                 <th>Example artist</th>
-                <th>Example continuity</th>
+                <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
 
-            <tr>
-                <th>Example name1</th>
-                <th>Example artist1</th>
-                <th>Example continuity1</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-
-            <tr>
-                <th>Example name2</th>
-                <th>Example artist2</th>
-                <th>Example continuity2</th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-
-<!-- -------------------------------------------------------- -->
         </table>
     </section>
 </main>
