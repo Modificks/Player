@@ -26,7 +26,7 @@
       <h1>Log in to SoundBar</h1>
 
     <div class="registration">
-      <form th:action="@{/log-in}" th:object="${checkUser}" method="post">
+      <form th:action="@{/login}" th:object="${checkUser}" method="post">
 
         <p class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
 
