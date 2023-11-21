@@ -9,9 +9,10 @@ const buttons = document.querySelectorAll('button[data-url]'),
 
 buttons.forEach(button => {
     const songUrl = button.getAttribute('data-url'),
-        songTitle = button.parentNode.parentNode.querySelector('th:nth-child(2)').innerText;
+        songTitle = button.parentNode.parentNode.querySelector('th:nth-child(2)').innerText,
+        songArtist = button.parentNode.parentNode.querySelector('th:nth-child(3)').innerText;
 
-    songs.push({title: songTitle, url: songUrl});
+    songs.push({title: songTitle, artist: songArtist, url: songUrl});
 });
 
 let songIndex = 0;
