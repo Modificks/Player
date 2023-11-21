@@ -103,6 +103,12 @@
     <section class="bar-section">
 
         <div class="player">
+
+            <div class="current-song">
+                <div class="song"></div>
+                <audio class="audio" src="https://s3.eu-central-1.amazonaws.com/music.files.bucket/nirvana_-_come-as-you-are.mp3"></audio>
+            </div>
+
             <div class="progress-container">
                 <div class="progress"></div>
             </div>
@@ -125,12 +131,6 @@
                         <img th:src="@{/images/other_images/player_page/bar_img/next.png}" alt="image">
                     </button>
                 </div>
-            </div>
-
-            <div class="current-song">
-                <div class="title">Now playing: </div>
-                <div class="song"></div>
-                <audio class="audio" src="https://s3.eu-central-1.amazonaws.com/music.files.bucket/nirvana_-_come-as-you-are.mp3"></audio>
             </div>
         </div>
     </section>
