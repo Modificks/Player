@@ -48,4 +48,9 @@ public class Artist implements Serializable {
     public int hashCode() {
         return Objects.hash(getId(), getNickname());
     }
+
+    @Override
+    public String toString() {
+        return nickname;
+    }
 }
