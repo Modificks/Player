@@ -2,49 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
     <meta charset="UTF-8">
     <title>SoundBar - Web Player</title>
-    <link rel="icon" type="image/x-icon" href="" th:href="@{/images/project_logos/icon.ico}">
-    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/PlayerPage.css}">
-
+    <link rel="icon" type="image/x-icon" th:href="@{/images/project_logos/icon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/PlayerPage.css}">
 </head>
-<body>
 
+<body>
 <main>
 
     <section class="navigation-tools-section">
 
         <div class="container">
 
-            <img class="img-container" src="" th:src="@{/images/project_logos/small_logo.png}" alt="image"/>
+            <img class="img-container" th:src="@{/images/project_logos/small_logo.png}" alt="image"/>
 
             <div class="text-container">
                 <h3>SoundBar</h3>
             </div>
-
         </div>
 
         <div class="container">
 
             <button class="bar-button" onclick="choosingTable('list-of-songs')">
-               <img src="" th:src="@{/images/other_images/home.png}" alt="image">
+               <img th:src="@{/images/other_images/player_page/home.png}" alt="image">
             </button>
 
             <div class="text-container">
                 <p>Home</p>
             </div>
-
         </div>
 
         <div class="container">
 
-            <a href="#"><img class="img-container" src="" th:src="@{/images/other_images/search.png}" alt="image"></a>
+            <a href="#"><img class="img-container" th:src="@{/images/other_images/player_page/search.png}" alt="image"></a>
 
             <div class="text-container">
                 <p>Search</p>
             </div>
-
         </div>
     </section>
 
@@ -52,22 +47,20 @@
 
         <div class="container">
 
-            <img class="img-container" src="" th:src="@{/images/other_images/library.png}" alt="image">
+            <img class="img-container" th:src="@{/images/other_images/player_page/library.png}" alt="image">
 
             <div class="text-container">
                 <p>My library</p>
             </div>
-
         </div>
 
         <section>
 
             <table>
-
                 <tr>
                     <td>
                         <button class="bar-button" onclick="choosingTable('added-songs')">
-                            <img src="" th:src="@{/images/other_images/player-page_playlist.png}" alt="image">
+                            <img th:src="@{/images/other_images/player_page/player-page_playlist.png}" alt="image">
                         </button>
                     </td>
                 </tr>
@@ -75,7 +68,7 @@
                 <tr>
                     <td>
                         <button class="bar-button" onclick="choosingTable('liked-songs')">
-                            <img src="" th:src="@{/images/other_images/liked_playlist.png}" alt="image">
+                            <img th:src="@{/images/other_images/player_page/liked_playlist.png}" alt="image">
                         </button>
                     </td>
                 </tr>
@@ -83,11 +76,10 @@
                 <tr>
                     <td>
                         <button class="bar-button" onclick="choosingTable('deleted-songs')">
-                            <img src="" th:src="@{/images/other_images/deleted_playlist.png}" alt="image">
+                            <img th:src="@{/images/other_images/player_page/deleted_playlist.png}" alt="image">
                         </button>
                     </td>
                 </tr>
-
             </table>
         </section>
     </section>
@@ -101,7 +93,7 @@
                 <input class="search-form-text" id="searchInput" type="text" placeholder="Search for music">
 
                 <button class="search-form-button">
-                    <img class="search-form-image" src="" th:src="@{/images/other_images/search.png}" alt="image">
+                    <img class="search-form-image" th:src="@{/images/other_images/player_page/search.png}" alt="image">
                 </button>
 
             </div>
@@ -110,34 +102,37 @@
 
     <section class="bar-section">
 
-        <table class="bar">
-            <tr>
+        <div class="player">
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
 
-                <th>
-
-                    <button class="bar-button">
-                        <img src="" th:src="@{/images/other_images/previous.png}" alt="image">
+            <div class="bar">
+                <div>
+                    <button class="bar-button" onclick="previousSong()">
+                        <img th:src="@{/images/other_images/player_page/bar_img/previous.png}" alt="image">
                     </button>
+                </div>
 
-                </th>
-
-                <th>
-
-                    <button class="bar-button">
-                        <img src="" th:src="@{/images/other_images/play.png}" alt="image">
+                <div>
+                    <button class="bar-button" onclick="toggle()">
+                        <img class="image" th:src="@{/images/other_images/player_page/bar_img/play.png}" alt="image">
                     </button>
-                </th>
+                </div>
 
-                <th>
-
-                    <button class="bar-button">
-                        <img src="" th:src="@{/images/other_images/next.png}" alt="image">
+                <div>
+                    <button class="bar-button" onclick="nextSong()">
+                        <img th:src="@{/images/other_images/player_page/bar_img/next.png}" alt="image">
                     </button>
+                </div>
+            </div>
 
-                </th>
-            </tr>
-
-        </table>
+            <div class="current-song">
+                <div class="title">Now playing: </div>
+                <div class="song"></div>
+                <audio class="audio" src="https://s3.eu-central-1.amazonaws.com/music.files.bucket/nirvana_-_come-as-you-are.mp3"></audio>
+            </div>
+        </div>
     </section>
 
     <section class="list-of-songs-section">
@@ -154,7 +149,6 @@
                 <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
-
         </table>
 
         <table class="list-of-songs" id="liked-songs">
@@ -170,7 +164,6 @@
                 <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
-
         </table>
 
         <table class="list-of-songs" id="deleted-songs">
@@ -180,38 +173,44 @@
                 <th>Continuity</th>
             </tr>
 
-            <tr>
             <tr th:each="song : ${songs}">
                 <th th:text="${song.title}"></th>
                 <th>Example artist</th>
                 <th th:text="${song.continuity}"></th>
                 <th><button class="button">Example add</button> </th>
             </tr>
-
         </table>
 
         <table class="list-of-songs" id="list-of-songs">
-
             <tr>
+                <th>Tap to play</th>
                 <th>Song</th>
                 <th>Artist</th>
                 <th>Continuity</th>
             </tr>
 
             <tr th:each="song : ${songs}">
-                <th th:text="${song.title}"></th>
-                <th>Example artist</th>
-                <th th:text="${song.continuity}"></th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
 
+                <th >
+                    <button class="bar-button" onclick="playSong()" th:data-url="${song.url}">
+                        <img th:src="@{/images/other_images/player_page/bar_img/play.png}" alt="image">
+                    </button>
+                </th>
+                <th th:text="${song.title}"></th>
+                <th th:text="${song.artist}"></th>
+                <th th:text="${song.continuity}"></th>
+                <th>
+                    <button class="button">Example add</button>
+                </th>
+
+            </tr>
         </table>
     </section>
 </main>
 
-<script src="" th:src="@{/JS/MusicSearch.js}"></script>
-
-<script src="" th:src="@{/JS/ChoosingTable.js}"></script>
+<script th:src="@{/JS/MusicSearch.js}"></script>
+<script th:src="@{/JS/ChoosingTable.js}"></script>
+<script th:src="@{/JS/PlayMusic.js}"></script>
 
 </body>
 </html>

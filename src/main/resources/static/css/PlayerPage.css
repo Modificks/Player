@@ -96,11 +96,37 @@ p {
     margin-left: 710px;
 }
 
-.bar {
+.player {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     margin: 0 auto;
-    border-spacing: 20px;
-    padding-top: -12px;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.current-song {
+    margin: 0 auto;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #282828;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    .progress {
+        height: 5px;
+        background-color: #54cef6;
+        border-radius: 5px;
+    }
 }
 
 .list-of-songs-section {
