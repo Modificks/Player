@@ -2,12 +2,12 @@ package com.player.player.services.servicesImp;
 
 import com.player.player.entities.PlayList;
 import com.player.player.entities.Song;
+import com.player.player.entities.User;
+import com.player.player.enums.PlayListType;
 import com.player.player.repositories.PlayListRepository;
 import com.player.player.repositories.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.*;
 
 @Service
 public class PlayListRepositoryImp {
@@ -34,5 +34,20 @@ public class PlayListRepositoryImp {
             playlist.getPlayListsMusic().add(song);
             playListRepository.save(playlist);
         }
+    }
+
+    public void createDefaultPlayListsForUser(User user) {
+        PlayList mainPlayList = new PlayList();
+
+        mainPlayList.setUser(user);
+        mainPlayList.setType(PlayListType.MAIN);
+
+        PlayList likedPlayList = new PlayList();
+
+        likedPlayList.setUser(user);
+        likedPlayList.setType(PlayListType.LIKED);
+
+        playListRepository.save(mainPlayList);
+        playListRepository.save(likedPlayList);
     }
 }

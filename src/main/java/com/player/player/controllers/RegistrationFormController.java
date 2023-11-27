@@ -1,6 +1,7 @@
 package com.player.player.controllers;
 
 import com.player.player.entities.User;
+import com.player.player.services.servicesImp.PlayListRepositoryImp;
 import com.player.player.services.servicesImp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,12 @@ public class RegistrationFormController {
 
     private final UserServiceImp userServiceImp;
 
+    private final PlayListRepositoryImp playListRepositoryImp;
+
     @Autowired
-    public RegistrationFormController(UserServiceImp userServiceImp) {
+    public RegistrationFormController(UserServiceImp userServiceImp, PlayListRepositoryImp playListRepositoryImp) {
         this.userServiceImp = userServiceImp;
+        this.playListRepositoryImp = playListRepositoryImp;
     }
 
     @GetMapping("/registration")
@@ -45,6 +49,7 @@ public class RegistrationFormController {
         }
 
         userServiceImp.register(user);
+        playListRepositoryImp.createDefaultPlayListsForUser(user);
 
         return "redirect:/player";
     }
