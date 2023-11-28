@@ -9,6 +9,10 @@ public class DomainValidator implements ConstraintValidator<Domain, String> {
     private final String REGEXP = "\\.ru$";
     @Override
     public boolean isValid(String email, ConstraintValidatorContext context) {
-        return email.matches(REGEXP);
+        if (email.matches(REGEXP)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
