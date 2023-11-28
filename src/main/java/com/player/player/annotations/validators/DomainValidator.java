@@ -6,10 +6,9 @@ import javax.validation.ConstraintValidatorContext;
 
 public class DomainValidator implements ConstraintValidator<Domain, String> {
 
-    private static final String REGEXP = "^(?!.*\\.ru)$\n";
-
+    private final String REGEXP = "\\.ru$";
     @Override
-    public boolean isValid(String domain, ConstraintValidatorContext context) {
-        return !domain.matches(REGEXP);
+    public boolean isValid(String email, ConstraintValidatorContext context) {
+        return email.matches(REGEXP);
     }
 }

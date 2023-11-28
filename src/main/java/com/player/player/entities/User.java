@@ -38,7 +38,7 @@ public class User implements Serializable {
     @NotEmpty(message = "This field can not be empty")
     @Email(message = "Invalid email. " +
             "For example: dimanakonechnui7@gmail.com")
-   // @Domain
+    @Domain(message = "Invalid domain(it can`t contain .ru)")
     private String email;
 
     @Column(name = "nickname")
