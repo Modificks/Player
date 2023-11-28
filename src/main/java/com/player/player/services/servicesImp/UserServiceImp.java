@@ -31,7 +31,7 @@ public class UserServiceImp {
         return postRepository.findByNickname(nickname);
     }
 
-    public User findByPassword(String password) {
-        return postRepository.findByPassword(password);
+    public User findByEmailAndPassword(String email, String password) {
+        return postRepository.findByEmailAndPassword(email, password);
     }
 }

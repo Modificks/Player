@@ -9,5 +9,5 @@ public interface PostRepository extends CrudRepository<User, Long> {
 
     User findByNickname(String nickname);
 
-    User findByPassword(String password);
+    User findByEmailAndPassword(String email, String password);
 }

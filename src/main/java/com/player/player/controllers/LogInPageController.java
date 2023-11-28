@@ -30,7 +30,7 @@ public class LogInPageController {
     @PostMapping("/login")
     public String getPlayerPageAfterLogIn(@ModelAttribute("checkUser") User user, BindingResult bindingResult) {
 
-        if (userServiceImp.findByEmail(user.getEmail()) != null && userServiceImp.findByPassword(user.getPassword()) != null) {
+        if (userServiceImp.findByEmailAndPassword(user.getEmail(), user.getPassword()) != null) {
             return "redirect:/player";
         } else {
             bindingResult.addError(new FieldError("checkUser", "email", "Invalid email or password"));
