@@ -51,6 +51,6 @@ public class RegistrationFormController {
         userServiceImp.register(user);
         playListRepositoryImp.createDefaultPlayListsForUser(user);
 
-        return "redirect:/player";
+        return "redirect:/player/" + user.getId();
     }
 }

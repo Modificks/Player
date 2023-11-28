@@ -73,13 +73,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td>
-                        <button class="bar-button" onclick="choosingTable('deleted-songs')">
-                            <img th:src="@{/images/other_images/player_page/deleted_playlist.png}" alt="image">
-                        </button>
-                    </td>
-                </tr>
             </table>
         </section>
     </section>
@@ -138,48 +131,45 @@
     <section class="list-of-songs-section">
         <table class="list-of-songs" id="added-songs">
             <tr>
+                <th>Tap to play</th>
                 <th>Song</th>
                 <th>Artist</th>
                 <th>Continuity</th>
             </tr>
 
-            <tr th:each="song : ${songs}">
-                <th th:text="${song.title}"></th>
-                <th>Example artist</th>
-                <th th:text="${song.continuity}"></th>
-                <th><button class="button">Example add</button> </th>
+            <tr>
+                <th >
+                    <button class="bar-button" onclick="playSong()">
+                        <img th:src="@{/images/other_images/player_page/bar_img/play.png}" alt="image">
+                    </button>
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </table>
 
+        <div th:each="playlist : ${userPlaylists}" th:value="${playlist.getId()}">
         <table class="list-of-songs" id="liked-songs">
             <tr>
+                <th>Tap to play</th>
                 <th>Song</th>
                 <th>Artist</th>
                 <th>Continuity</th>
             </tr>
 
-            <tr th:each="song : ${songs}">
+            <tr th:each="song : ${playlist.playListsMusic}">
+                <th>
+                    <button class="bar-button" onclick="playSong()">
+                        <img th:src="@{/images/other_images/player_page/bar_img/play.png}" alt="image">
+                    </button>
+                </th>
                 <th th:text="${song.title}"></th>
-                <th>Example artist</th>
+                <th th:text="${song.artist.name}"></th>
                 <th th:text="${song.continuity}"></th>
-                <th><button class="button">Example add</button> </th>
             </tr>
         </table>
-
-        <table class="list-of-songs" id="deleted-songs">
-            <tr>
-                <th>Song</th>
-                <th>Artist</th>
-                <th>Continuity</th>
-            </tr>
-
-            <tr th:each="song : ${songs}">
-                <th th:text="${song.title}"></th>
-                <th>Example artist</th>
-                <th th:text="${song.continuity}"></th>
-                <th><button class="button">Example add</button> </th>
-            </tr>
-        </table>
+        </div>
 
         <table class="list-of-songs" id="list-of-songs">
             <tr>
@@ -201,11 +191,14 @@
                 <th th:text="${song.continuity}"></th>
                 <th>
                     <form action="/player" method="post">
+
                         <select id="playlistId" name="playlistId">
-                            <option value='1'>Liked</option>
-                            <option value="2">Main</option>
-                            <option value="3">Deleted</option>
+                            <option th:each="play_lists : ${play_lists}"
+                                    th:value="${play_lists.id}"
+                                    th:text="${play_lists.type}">
+                            </option>
                         </select>
+
                         <input type="hidden" name="songId" th:value="${song.id}">
                         <button type="submit">add to playlist</button>
                     </form>

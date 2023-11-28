@@ -8,6 +8,7 @@ import com.player.player.repositories.PlayListRepository;
 import com.player.player.repositories.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class PlayListRepositoryImp {
@@ -49,5 +50,9 @@ public class PlayListRepositoryImp {
 
         playListRepository.save(mainPlayList);
         playListRepository.save(likedPlayList);
+    }
+
+    public List<PlayList> getAllPlayLists(Long userId) {
+        return playListRepository.findByUserId(userId);
     }
 }
