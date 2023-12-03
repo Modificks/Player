@@ -26,30 +26,26 @@
       <h1>Log in to SoundBar</h1>
 
     <div class="registration">
-      <form th:action="@{/login}" th:object="${checkUser}" method="post">
-
-        <p class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+      <form action="/login" th:action="@{/login}" method="post">
 
         <div class="form-group">
 
           <p class="guide">Enter your email</p>
 
-          <label>
-            <input type="email" class="input" th:field="*{email}" placeholder="Email@domain.com">
-          </label>
+          <label for="username"></label>
+          <input type="email" class="input" id="username" name="username" placeholder="Email@domain.com">
         </div>
 
         <div class="form-group">
 
           <p class="guide">Enter your password</p>
 
-          <label>
-            <input type="password" class="input" th:field="*{password}" placeholder="password">
-          </label>
+          <label for="password"></label>
+          <input type="password" class="input" id="password" name="password" placeholder="password">
 
         </div>
 
-        <button class="button" type="submit" th:href="@{/player}">Log in</button>
+        <button class="button" type="submit">Log in</button>
 
       </form>
     </div>

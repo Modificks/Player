@@ -39,7 +39,9 @@ public class RegistrationFormController {
             return "RegistrationForm";
         }
 
-        if (userServiceImp.findByEmail(user.getEmail()) != null) {
+        User entity = userServiceImp.findByEmail(user.getEmail());
+
+        if (entity != null) {
             bindingResult.addError(new FieldError("newUser", "email", "This email already exists"));
             return "RegistrationForm";
 
@@ -51,6 +53,6 @@ public class RegistrationFormController {
         userServiceImp.register(user);
         playListRepositoryImp.createDefaultPlayListsForUser(user);
 
-        return "redirect:/player/" + user.getId();
+        return "redirect:/player?userId=" + user.getId();
     }
 }

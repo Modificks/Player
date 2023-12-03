@@ -70,3 +70,5 @@ public class User implements Serializable {
         return Objects.hash(getId(), getEmail(), getNickname(), getPassword());
     }
 }
+
+//TODO: make domain validation works
