@@ -5,10 +5,11 @@ import com.player.player.entities.Song;
 import com.player.player.services.servicesImp.PlayListRepositoryImp;
 import com.player.player.services.servicesImp.SongRepositoryImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
@@ -25,23 +26,26 @@ public class PlayerPageController {
         this.songRepositoryImp= songRepositoryImp;
         this.playListRepositoryImp = playListRepositoryImp;
     }
-
-    @GetMapping("/player/{userId}")
-    public String getPlayerPage(@PathVariable Long userId, Model model) {
+    @GetMapping("/player")
+    public String getPlayerPage(@RequestParam Long userId, Model model) {
         List<Song> listOfSongs = songRepositoryImp.getAllSongs();
         List<PlayList> listOfPlayLists = playListRepositoryImp.getAllPlayLists(userId);
 
+        model.addAttribute("userId", userId);
         model.addAttribute("songs", listOfSongs);
         model.addAttribute("play_lists", listOfPlayLists);
 
         return "PlayerPage";
     }
 
-    @PostMapping("/player/{userId}")
+    @PostMapping("/player")
     public String addSongToPlayList(@RequestParam("playlistId") Long playlistId,
                                     @RequestParam("songId") Long songId,
-                                    @PathVariable Long userId) {
+                                    @RequestParam("userId") Long userId) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        authentication.getPrincipal();
         playListRepositoryImp.addToPlaylist(playlistId, songId);
-        return "PlayerPage";
+        return "redirect:/player?userId=" + userId;
     }
 }
