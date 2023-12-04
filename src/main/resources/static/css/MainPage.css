@@ -102,6 +102,9 @@ h3 {
 
 .list-style {
     list-style-type: none;
+    align-items: center;
+    padding-top: 25px;
+    margin-left: 270px;
 }
 
 .column {
