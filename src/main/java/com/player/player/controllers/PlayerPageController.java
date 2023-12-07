@@ -2,9 +2,11 @@ package com.player.player.controllers;
 
 import com.player.player.entities.PlayList;
 import com.player.player.entities.Song;
+import com.player.player.entities.User;
 import com.player.player.services.servicesImp.PlayListRepositoryImp;
 import com.player.player.services.servicesImp.SongRepositoryImp;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.player.player.services.servicesImp.UserServiceImp;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,19 +17,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class PlayerPageController {
 
     private final SongRepositoryImp songRepositoryImp;
 
     private final PlayListRepositoryImp playListRepositoryImp;
 
-    @Autowired
-    public PlayerPageController(SongRepositoryImp songRepositoryImp, PlayListRepositoryImp playListRepositoryImp) {
-        this.songRepositoryImp= songRepositoryImp;
-        this.playListRepositoryImp = playListRepositoryImp;
-    }
+    private final UserServiceImp userServiceImp;
+
     @GetMapping("/player")
-    public String getPlayerPage(@RequestParam Long userId, Model model) {
+    public String getPlayerPage(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        User user = userServiceImp.findByEmail(username);
+        Long userId = user.getId();
+
         List<Song> listOfSongs = songRepositoryImp.getAllSongs();
         List<PlayList> listOfPlayLists = playListRepositoryImp.getAllPlayLists(userId);
 
@@ -40,12 +45,11 @@ public class PlayerPageController {
 
     @PostMapping("/player")
     public String addSongToPlayList(@RequestParam("playlistId") Long playlistId,
-                                    @RequestParam("songId") Long songId,
-                                    @RequestParam("userId") Long userId) {
+                                    @RequestParam("songId") Long songId) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         authentication.getPrincipal();
         playListRepositoryImp.addToPlaylist(playlistId, songId);
-        return "redirect:/player?userId=" + userId;
+        return "redirect:/player";
     }
 }

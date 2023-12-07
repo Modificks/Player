@@ -190,7 +190,7 @@
                 <th th:text="${song.artist}"></th>
                 <th th:text="${song.continuity}"></th>
                 <th>
-                    <form th:action="@{'/player?userId=' + ${userId}}" method="post">
+                    <form action="/player" method="post">
 
                         <select id="playlistId" name="playlistId">
                             <option th:each="play_lists : ${play_lists}"

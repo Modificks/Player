@@ -47,7 +47,7 @@ public class User implements Serializable {
             "It should contains up to 15 symbols")
     private String nickname;
 
-    @Column(name = "password")
+    @Column(name = "password", columnDefinition = "TEXT")
     @NotEmpty(message = "This field can not be empty")
     @Password(message = "Invalid password " +
             "It should contains at least one small and one big character," +
@@ -70,5 +70,3 @@ public class User implements Serializable {
         return Objects.hash(getId(), getEmail(), getNickname(), getPassword());
     }
 }
-
-//TODO: make domain validation works

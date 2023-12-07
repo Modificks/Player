@@ -3,7 +3,7 @@ package com.player.player.controllers;
 import com.player.player.entities.User;
 import com.player.player.services.servicesImp.PlayListRepositoryImp;
 import com.player.player.services.servicesImp.UserServiceImp;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,17 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 
 @Controller
+@RequiredArgsConstructor
 public class RegistrationFormController {
 
     private final UserServiceImp userServiceImp;
 
     private final PlayListRepositoryImp playListRepositoryImp;
-
-    @Autowired
-    public RegistrationFormController(UserServiceImp userServiceImp, PlayListRepositoryImp playListRepositoryImp) {
-        this.userServiceImp = userServiceImp;
-        this.playListRepositoryImp = playListRepositoryImp;
-    }
 
     @GetMapping("/registration")
     public String getRegistrationForm(Model model) {
@@ -53,6 +48,6 @@ public class RegistrationFormController {
         userServiceImp.register(user);
         playListRepositoryImp.createDefaultPlayListsForUser(user);
 
-        return "redirect:/player?userId=" + user.getId();
+        return "redirect:/player";
     }
 }
