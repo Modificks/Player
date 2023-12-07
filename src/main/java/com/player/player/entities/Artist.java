@@ -30,7 +30,7 @@ public class Artist implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", columnDefinition = "VARCHAR", length = 64)
     @Nickname
     private String nickname;
 

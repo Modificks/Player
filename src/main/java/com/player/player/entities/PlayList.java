@@ -35,7 +35,7 @@ public class PlayList implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "type")
+    @Column(name = "type", columnDefinition = "VARCHAR", length = 64)
     @Enumerated(value = EnumType.STRING)
     private PlayListType type;
 

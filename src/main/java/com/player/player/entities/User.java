@@ -34,14 +34,14 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email")
+    @Column(name = "email", columnDefinition = "VARCHAR", length = 64)
     @NotEmpty(message = "This field can not be empty")
     @Email(message = "Invalid email. " +
             "For example: dimanakonechnui7@gmail.com")
     @Domain(message = "Invalid domain(it can`t contain .ru)")
     private String email;
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", columnDefinition = "VARCHAR", length = 15)
     @NotEmpty(message = "This field can not be empty")
     @Nickname(message = "Invalid nickname." +
             "It should contains up to 15 symbols")
