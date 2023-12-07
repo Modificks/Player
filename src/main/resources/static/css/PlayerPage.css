@@ -15,13 +15,15 @@ main {
     display: grid;
     gap: 6px;
     grid-template-columns: 1fr 1fr 3fr;
-    grid-template-rows: 1fr 1fr 100vh;
+    grid-template-rows: 80px 80px 790px;
 }
 
 .navigation-tools-section {
     background-color: #171717;
     border-radius: 8px;
     grid-area: 1 / 1 / 3 / 2;
+    position: sticky;
+    top: 0;
 }
 
 .container {
@@ -41,17 +43,20 @@ main {
 }
 
 .library-section {
-
     background-color: #171717;
     border-radius: 8px;
     grid-area: 3 / 1 / 4 /  2;
+    position: sticky;
+    max-height: 795px;
+    overflow-y: auto;
 }
 
 .search-section {
     grid-area: 1 / 2 / 2 / 3;
     border-radius: 8px;
     background-color: #101010;
-
+    position: sticky;
+    top: 0;
 }
 
 .search-container {
@@ -99,6 +104,8 @@ main {
     border-radius: 8px;
     grid-area: 1 / 3 / 2 / 4;
     padding: 7px;
+    position: sticky;
+    top: 0;
 }
 
 .player {
@@ -138,6 +145,8 @@ main {
     background-color: #171717;
     border-radius: 8px;
     grid-area: 2 / 2 / 4 / 4;
+    overflow-y: auto;
+    max-height: 875px;
 }
 
 .list-of-songs th,
@@ -147,4 +156,11 @@ main {
 
 .list-of-songs {
     display: none;
+}
+
+@media only screen and (max-width: 1500px) {
+    .search-form {
+        width: 220px;
+        height: 35px;
+    }
 }
