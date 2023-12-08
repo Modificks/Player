@@ -30,15 +30,18 @@ public class PlayerPageController {
     public String getPlayerPage(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
+
         User user = userServiceImp.findByEmail(username);
         Long userId = user.getId();
 
         List<Song> listOfSongs = songRepositoryImp.getAllSongs();
         List<PlayList> listOfPlayLists = playListRepositoryImp.getAllPlayLists(userId);
+        List<Song> listOfSongInPlayList = songRepositoryImp.getSongsByPlaylistId(userId);
 
-        model.addAttribute("userId", userId);
+        model.addAttribute("songs_in_liked_play_list", listOfSongInPlayList);
         model.addAttribute("songs", listOfSongs);
         model.addAttribute("play_lists", listOfPlayLists);
+        model.addAttribute("userId", userId);
 
         return "PlayerPage";
     }

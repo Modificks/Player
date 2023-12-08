@@ -6,22 +6,17 @@ import com.player.player.entities.User;
 import com.player.player.enums.PlayListType;
 import com.player.player.repositories.PlayListRepository;
 import com.player.player.repositories.SongRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PlayListRepositoryImp {
 
     private final PlayListRepository playListRepository;
 
     private final SongRepository songRepository;
-
-    @Autowired
-    public PlayListRepositoryImp(PlayListRepository playListRepository, SongRepository songRepository) {
-        this.playListRepository = playListRepository;
-        this.songRepository = songRepository;
-    }
 
     public PlayList getPlaylistById(Long playlistId) {
         return playListRepository.findById(playlistId).orElse(null);
@@ -38,17 +33,17 @@ public class PlayListRepositoryImp {
     }
 
     public void createDefaultPlayListsForUser(User user) {
-        PlayList mainPlayList = new PlayList();
-
-        mainPlayList.setUser(user);
-        mainPlayList.setType(PlayListType.MAIN);
+//        PlayList mainPlayList = new PlayList();
+//
+//        mainPlayList.setUser(user);
+//        mainPlayList.setType(PlayListType.MAIN);
 
         PlayList likedPlayList = new PlayList();
 
         likedPlayList.setUser(user);
         likedPlayList.setType(PlayListType.LIKED);
 
-        playListRepository.save(mainPlayList);
+//        playListRepository.save(mainPlayList);
         playListRepository.save(likedPlayList);
     }
 
