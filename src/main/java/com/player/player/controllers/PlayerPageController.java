@@ -47,12 +47,18 @@ public class PlayerPageController {
     }
 
     @PostMapping("/player")
-    public String addSongToPlayList(@RequestParam("playlistId") Long playlistId,
-                                    @RequestParam("songId") Long songId) {
+    public String addOrRemoveSongFromPlaylist(@RequestParam("playlistId") Long playlistId,
+                                              @RequestParam("songId") Long songId,
+                                              @RequestParam("action") String action) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         authentication.getPrincipal();
-        playListRepositoryImp.addToPlaylist(playlistId, songId);
+
+        switch (action){
+            case "add" -> playListRepositoryImp.addToPlaylist(playlistId, songId);
+            case "remove" -> playListRepositoryImp.removeFromPlaylist(playlistId, songId);
+        }
+
         return "redirect:/player";
     }
 }

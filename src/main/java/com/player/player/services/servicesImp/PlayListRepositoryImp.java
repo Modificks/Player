@@ -9,6 +9,7 @@ import com.player.player.repositories.SongRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +30,20 @@ public class PlayListRepositoryImp {
         if (playlist != null && song != null) {
             playlist.getPlayListsMusic().add(song);
             playListRepository.save(playlist);
+        }
+    }
+
+    public void removeFromPlaylist(Long playlistId, Long songId) {
+        PlayList playlist = playListRepository.findById(playlistId).orElse(null);
+        Song song = songRepository.findById(songId).orElse(null);
+
+        if (playlist != null && song != null) {
+            Set<Song> songsInPlaylist = playlist.getPlayListsMusic();
+            if (songsInPlaylist.contains(song)) {
+                songsInPlaylist.remove(song);
+                playlist.setPlayListsMusic(songsInPlaylist);
+                playListRepository.save(playlist);
+            }
         }
     }
 
