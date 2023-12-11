@@ -1,9 +1,8 @@
 package com.player.player.controllers;
 
+import com.player.player.config.security.auth.UserAuthRequest;
 import com.player.player.entities.User;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -36,12 +35,5 @@ public class LogInPageController {
         SecurityContextHolder.getContext().setAuthentication(auth);
 
         return "redirect:/player";
-    }
-
-    @Getter
-    @Setter
-    public static class UserAuthRequest {
-        private String username;
-        private String password;
     }
 }

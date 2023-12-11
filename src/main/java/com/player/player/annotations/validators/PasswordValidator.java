@@ -13,16 +13,3 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
         return password.matches(REGEXP);
     }
 }
-
-//Correct:
-//
-//        "P@ssw0rd"
-//        "Hello123!"
-//        "Str0ng#Pa$$"
-//
-//Incorrect:
-//
-//        "Weakpassword" (no uppercase or special characters)
-//        "Short1!" (less than 6 characters)
-//        "NoDigits&SpecialChars" (missing digit and special characters)
-//        "ALLCAPS123" (no lowercase letter)

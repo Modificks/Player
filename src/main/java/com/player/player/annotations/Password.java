@@ -1,6 +1,5 @@
 package com.player.player.annotations;
 
-
 import com.player.player.annotations.validators.PasswordValidator;
 import javax.validation.Constraint;
 import javax.validation.Payload;
