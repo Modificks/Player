@@ -142,7 +142,7 @@
                     <th th:text="${song.continuity}"></th>
                     <th>
                         <form action="/player" method="post">
-                            <select name="playlistId">
+                            <select class="dropdown-menu" name="playlistId">
                                 <option th:each="play_lists : ${play_lists}"
                                         th:value="${play_lists.id}"
                                         th:text="${play_lists.type}">
@@ -150,7 +150,7 @@
                             </select>
                             <input type="hidden" name="songId" th:value="${song.id}">
                             <input type="hidden" name="action" value="remove">
-                            <button type="submit">remove from playlist</button>
+                            <button class="button" type="submit">remove from playlist</button>
                         </form>
                     </th>
                 </tr>
@@ -177,7 +177,7 @@
                 <th th:text="${song.continuity}"></th>
                 <th>
                     <form action="/player" method="post">
-                        <select name="playlistId">
+                        <select class="dropdown-menu" name="playlistId">
                             <option th:each="play_lists : ${play_lists}"
                                     th:value="${play_lists.id}"
                                     th:text="${play_lists.type}">
@@ -185,7 +185,7 @@
                         </select>
                         <input type="hidden" name="songId" th:value="${song.id}">
                         <input type="hidden" name="action" value="add">
-                        <button type="submit">add to playlist</button>
+                        <button class="button" type="submit">add to playlist</button>
                     </form>
                 </th>
             </tr>
