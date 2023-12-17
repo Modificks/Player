@@ -1,7 +1,7 @@
 package com.player.player.services.servicesImp;
 
 import com.player.player.entities.User;
-import com.player.player.repositories.PostRepository;
+import com.player.player.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserServiceImp implements UserDetailsService {
 
-    private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
     public void register(User user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -22,15 +22,15 @@ public class UserServiceImp implements UserDetailsService {
         user.setNickname(user.getNickname());
         user.setPassword(encoder.encode(user.getPassword()));
 
-        postRepository.save(user);
+        userRepository.save(user);
     }
 
     public User findByEmail(String email) {
-        return postRepository.findByEmail(email);
+        return userRepository.findByEmail(email);
     }
 
     public User findByNickname(String nickname) {
-        return postRepository.findByNickname(nickname);
+        return userRepository.findByNickname(nickname);
     }
 
     @Override

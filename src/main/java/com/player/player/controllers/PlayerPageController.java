@@ -51,9 +51,6 @@ public class PlayerPageController {
                                               @RequestParam("songId") Long songId,
                                               @RequestParam("action") String action) {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        authentication.getPrincipal();
-
         switch (action){
             case "add" -> playListRepositoryImp.addToPlaylist(playlistId, songId);
             case "remove" -> playListRepositoryImp.removeFromPlaylist(playlistId, songId);

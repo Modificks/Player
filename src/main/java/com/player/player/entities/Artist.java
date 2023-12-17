@@ -31,7 +31,6 @@ public class Artist implements Serializable {
     private Long id;
 
     @Column(name = "nickname", columnDefinition = "VARCHAR", length = 64)
-    @Nickname
     private String nickname;
 
     @OneToMany(mappedBy = "artist", fetch = FetchType.LAZY)
