@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link rel="icon" type="image/x-icon" href="" th:href="@{/images/project_logos/icon.ico}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/LogIn.css}">
+
+</head>
+
+<body>
+
+<header>
+
+  <section class="header">
+    <img class="img-container" src="" th:src="@{/images/project_logos/logo.png}" alt="image"/>
+    <h3>SoundBar</h3>
+  </section>
+
+</header>
+
+<main>
+  <section class="page">
+
+      <h1>Log in to SoundBar</h1>
+
+    <div class="registration">
+      <form action="/login" th:action="@{/login}" th:object="${authUser}" method="post">
+
+        <div class="form-group">
+
+          <p class="guide">Enter your email</p>
+
+          <label for="username"></label>
+          <input type="email" class="input" id="username" name="username" placeholder="Email@domain.com">
+        </div>
+
+        <div class="form-group">
+
+          <p class="guide">Enter your password</p>
+
+          <label for="password"></label>
+          <input type="password" class="input" id="password" name="password" placeholder="password">
+
+        </div>
+
+        <button class="button" type="submit">Log in</button>
+
+      </form>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="list-container">
+    <ul class="list-style">
+
+      <li>
+        <p>Don`t have an account?</p>
+      </li>
+
+      <li>
+        <a class="registration-link" th:href="@{/registration}">Start here</a>
+      </li>
+
+    </ul>
+  </div>
+
+</footer>
+</body>
+</html>

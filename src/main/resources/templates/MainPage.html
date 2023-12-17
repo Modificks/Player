@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Enjoy listening to music</title>
+    <link rel="icon" type="image/x-icon" href="" th:href="@{/images/project_logos/icon.ico}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/MainPage.css}"/>
+
+</head>
+<body>
+
+<header>
+
+    <section class="header">
+        <section>
+
+            <img class="img-container" src="" th:src="@{/images/project_logos/logo.png}" alt="image"/>
+            <h3>SoundBar</h3>
+
+        </section>
+
+        <section>
+            <table>
+
+                <tr>
+
+                    <th>
+                        <a class="log-in-link" th:href="@{/login}">Log In</a>
+                    </th>
+
+                    <th>
+                        <a class="registration-link" th:href="@{/registration}">Create an account</a>
+                    </th>
+
+                </tr>
+
+            </table>
+
+        </section>
+    </section>
+</header>
+
+<main>
+
+    <section>
+            <div>
+                <div class="text-container">
+
+                    <h2>Listen a lot of music for free</h2>
+                    <a class="registration-button" th:href="@{/registration}">Start Here</a>
+
+                </div>
+
+                <img class="background-img" src="" th:src="@{/images/other_images/main_page/background.png}" alt="image"/>
+
+            </div>
+    </section>
+
+    <section class="section-size">
+
+            <h2 class="advantages">Advantages of SoundBar<br><br></h2>
+
+        <ul class="list-style">
+
+            <li class="column">
+                <div>
+                    <div class="text-container-in-advantages">
+
+                        <h4>Listen to your favorite music</h4>
+                        <p>Enjoy your musical preferences <br>and explore <br>a lot of new exciting songs</p>
+
+                     </div>
+
+                    <img src="" th:src="@{/images/other_images/main_page/note.png}" alt="image"/>
+
+                </div>
+            </li>
+
+            <li class="column">
+                <div>
+                    <div class="text-container-in-advantages">
+
+                        <h4>Easily create your own playlists</h4>
+                        <p>You can configure your own library <br>and add any song to never lose it again</p>
+
+                    </div>
+
+                    <img src="" th:src="@{/images/other_images/main_page/playlist.png}" alt="image"/>
+
+                </div>
+            </li>
+
+            <li class="column">
+                <div>
+                    <div class="text-container-in-advantages">
+
+                        <h4>Don't depend on the internet</h4>
+                        <p>In the future, you will be able to download your playlists <br>to have the possibility of listening to them everywhere</p>
+
+                    </div>
+
+                    <img src="" th:src="@{/images/other_images/main_page/internet-off.png}" alt="image"/>
+
+                </div>
+            </li>
+
+            <li class="column">
+                <div>
+                    <div class="text-container-in-advantages">
+
+                        <h4>Be creative</h4>
+                        <p>All of us are unique, <br>so prove it to everyone using your playlist</p>
+
+                    </div>
+
+                    <img src="" th:src="@{/images/other_images/main_page/creative.png}" alt="image"/>
+
+                </div>
+
+            </li>
+        </ul>
+    </section>
+
+    <section>
+
+        <div>
+            <div class="text-container-2">
+
+                <h2>Are you ready? So let`s get started</h2>
+                <a class="registration-button" th:href="@{/registration}">Start Here</a>
+
+            </div>
+
+            <img class="background-img" src="" th:src="@{/images/other_images/main_page/background.png}" alt="image"/>
+
+        </div>
+
+    </section>
+</main>
+
+<footer>
+
+    <div class="footer-attributes">
+
+        <p>This web-app was created by modificks</p>
+        <p>Contact me</p><br>
+
+        <button class="social-media-button">
+
+            <a href="https://www.linkedin.com/feed/?trk=onboarding-landing" title="LinkedIn">
+                <img src="" th:src="@{/images/social_media_logos/linkedin.png}" alt="LinkedIn"/>
+            </a>
+
+        </button>
+
+        <button class="social-media-button">
+
+            <a href="https://t.me/Modifiks" title="Telegram">
+                <img src="" th:src="@{/images/social_media_logos/telegram.png}" alt="Telegram"/>
+            </a>
+
+        </button>
+
+        <button class="social-media-button">
+
+            <a href="https://www.instagram.com/_p_ersona_/" title="Instagram">
+                <img src="" th:src="@{/images/social_media_logos/instagram.png}" alt="Instagram"/>
+            </a>
+
+        </button>
+
+    </div>
+
+</footer>
+</body>
+</html>
